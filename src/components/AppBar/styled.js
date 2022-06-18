@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { FcSearch } from "react-icons/fc";
+import { FiDelete } from "react-icons/fi";
+
+
+
 
 export const Div = styled.div`
     height: 80px;
@@ -44,9 +48,37 @@ export const InputSerch = styled.div`
         &::placeholder {
             font-size: 22px;
         }
+        @media (max-width: 500px ) {
+            font-size: 16Spx;
+            &::placeholder {
+            font-size: 16px;
+        }
+            
+        }
     }
 `
 
+export const IconDelete = styled(FiDelete)`
+    font-size: 20px;
+    cursor: pointer;
+    width: 25px;
+    margin-right: 6px;
+    @media (min-width: 500px ) {
+        font-size: 30px;
+        width: 60px;
+    }
+`
+
+
 export const IconSearch = styled(FcSearch)`
-    font-size: 24px
+    font-size: 20px;
+    cursor: pointer;
+    width: 30px;
+    margin-right: 10px;
+    border-left: 1px solid black;
+    padding-left: 2px;
+    @media (min-width: 500px ) {
+        font-size: 30px;
+        width: 60px;
+    }
 `
