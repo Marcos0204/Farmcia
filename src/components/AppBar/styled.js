@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FcSearch } from "react-icons/fc";
-import { FiDelete } from "react-icons/fi";
-
+import { Link } from 'react-router-dom'
 
 
 
@@ -58,11 +57,12 @@ export const InputSerch = styled.div`
     }
 `
 
-export const IconDelete = styled(FiDelete)`
+export const IconDelete = styled.p`
     font-size: 20px;
     cursor: pointer;
     width: 25px;
-    margin-right: 6px;
+    font-weight: 500;
+    text-align: center;
     @media (min-width: 500px ) {
         font-size: 30px;
         width: 60px;
@@ -81,4 +81,40 @@ export const IconSearch = styled(FcSearch)`
         font-size: 30px;
         width: 60px;
     }
+`
+
+
+//////////////////////////////menu nav
+
+export const ContainerNav = styled.div`
+   height: 100vh;
+    width: 100%;
+    min-width: 320px;
+    background-color: #5656ea;
+
+
+    @media (min-width: 768px )  {
+        height: 30px;
+    }
+`
+
+export const Navigation = styled.nav`
+    min-height: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 768px )  {
+        flex-direction: row;
+    }
+`
+
+export const ButtonLink = styled(Link)`
+    color: white;
+    padding: 2px  4px;
+    margin: 0 15px;
+    text-decoration: none;
 `
