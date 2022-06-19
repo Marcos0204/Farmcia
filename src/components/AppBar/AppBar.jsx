@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FaTimes, FaBars } from 'react-icons/fa';
 
 
 
@@ -8,9 +9,10 @@ import { Div,
   InputSerch,
   IconSearch,
   IconDelete,
-  ContainerNav,
-  Navigation,
-  ButtonLink,
+  MobileIcon,
+  NavMenu,
+  NavItem,
+  NavLinks
 
 } from './styled'
 import Logo from '../../img/logo.png'
@@ -20,6 +22,11 @@ import Logo from '../../img/logo.png'
 const AppBar = () => {
 
   const [ Search, SetSearch ] = useState('')
+
+  const [ click, setClick ] = useState(false);
+
+
+  const haledClick = ()=> setClick(!click)
   return (
     <>
       <Div>
@@ -38,10 +45,34 @@ const AppBar = () => {
         </InputSerch>
 
 
-        <ImageLogo src={Logo} atl='logo' />
+        <MobileIcon 
+            onClick={haledClick}
+        >
+                { click ? <FaTimes/>
+                    : 
+                    <FaBars/>
+                }
+        </MobileIcon>
+        <NavMenu click={click}  onClick={haledClick}>
+          <NavItem>
+            <NavLinks to='/'>
+                Home
+            </NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to='/medicamentos'>
+                Medicina
+            </NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to='/belleza'>
+                Belleza
+            </NavLinks>
+          </NavItem>
+        </NavMenu>
       </Div>
       
-      <ContainerNav>
+      {/*<ContainerNav>
         <Navigation>
           <ButtonLink to='/'>
             HOme
@@ -53,8 +84,7 @@ const AppBar = () => {
             Belleza
           </ButtonLink>
           
-        </Navigation>
-      </ContainerNav>
+        </Navigation>*/}
     </>
   )
 }

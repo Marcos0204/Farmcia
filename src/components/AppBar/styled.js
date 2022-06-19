@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom'
 
 
 
-export const Div = styled.div`
+export const Div = styled.nav`
     height: 80px;
     width: 100%;
-    border-bottom: 1px solid black;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    position: relative;
+    -webkit-box-shadow: 0px 2px 13px 0px rgb(0 0 0 / 21%);
+    box-shadow: 0px 2px 13px 0px rgb(0 0 0 / 21%);
 `
 
 export const ImageLogo = styled.img`
@@ -29,12 +30,8 @@ export const InputSerch = styled.div`
     display: flex;
     align-items: center;
     padding: 8px 12px;
-
-    border: 1px solid black;
     border-radius: 30px;
-    -webkit-box-shadow: -3px 10px 49px -1px rgba(0,0,0,0.21); 
-    box-shadow: -3px 10px 49px -1px rgba(0,0,0,0.21);
-    border-color: rgba(223,225,229,0);
+    border: 1px solid #d0d6e7;
 
     input {
         width: 100%;
@@ -84,37 +81,75 @@ export const IconSearch = styled(FcSearch)`
 `
 
 
-//////////////////////////////menu nav
-
-export const ContainerNav = styled.div`
-   height: 100vh;
-    width: 100%;
-    min-width: 320px;
-    background-color: #5656ea;
 
 
-    @media (min-width: 768px )  {
-        height: 30px;
+///////////////////////////////////////////////////
+
+
+export const MobileIcon = styled.div`
+    display: none;
+    @media screen and (max-width: 960px){
+        display: block;
+        
+        font-size : 1.8rem;
+        cursor: pointer;
     }
 `
 
-export const Navigation = styled.nav`
-    min-height: 30px;
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
+
+export const NavMenu = styled.ul`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    @media (min-width: 768px )  {
-        flex-direction: row;
+    list-style: none;
+    text-align:center;
+
+    @media screen and (max-width: 960px){
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top : 80px;
+        left: ${({click}) => (click ? 0 : '-100%')};
+        opacity:1;
+        transition: all 1s ease;
+        background: #101522;
     }
 `
 
-export const ButtonLink = styled(Link)`
-    color: white;
-    padding: 2px  4px;
-    margin: 0 15px;
+
+export const NavItem = styled.li`
+    font-size: 22px;
+    font-weight: 700;
+
+    &:hover{
+        border-bottom: 2px solid #4b59f7;
+    }
+    @media screen and (max-width: 960px){
+        height: 80px;
+        width:100%;
+        &:hover {
+            border: none;
+        }
+    }
+`
+
+export const NavLinks = styled(Link)`
+    display: flex;
+    align-items: center;
+    color: #101522;;
+    padding: .5rem 1rem;
+    border-bottom: none;
     text-decoration: none;
+    @media screen and (max-width: 960px){
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+        color: #fff;
+        &hover{
+            color : #4b59f7;
+            transition: all 0.3s ease;
+        }
+    }
 `
