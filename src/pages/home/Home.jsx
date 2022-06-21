@@ -1,10 +1,11 @@
 import React from 'react'
-import AppBar from '../../components/AppBar/AppBar'
+import Carrusel from '../../components/Carrusel/Carrusel'
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <Carrusel />
+    
     </div>
   )
 }
