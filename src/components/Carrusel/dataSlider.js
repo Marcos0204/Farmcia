@@ -6,31 +6,32 @@ import image5 from '../../img/slider/img5.jpg'
 
 const dataSlider = [
     {
-    
+      id: 1,
       title: "Lorem ipsum",
       subTitle: "Lorem",
       img: image
 
     },
     {
-    
+      id: 2,
       title: "Lorem ipsum",
       subTitle: "Lorem",
       img:image2
     },
     {
-  
+      id: 3,
       title: "Lorem ipsum",
       subTitle: "Lorem",
       img:image3
     },
     {
-  
+      id: 4,
       title: "Lorem ipsum",
       subTitle: "Lorem",
       img:image4
     },
     {
+      id: 5,
       title: "Lorem ipsum",
       subTitle: "Lorem",
       img:image5

@@ -7,6 +7,8 @@ const Carrusel = ( ) => {
 
     const [slideIndex, setSlideIndex] = useState(1)
 
+    
+
     const nextSlide = () => {
         if(slideIndex !== dataSlider.length){
             setSlideIndex(slideIndex + 1)
@@ -24,6 +26,7 @@ const Carrusel = ( ) => {
             setSlideIndex(dataSlider.length)
         }
     }
+    
 
     const moveDot = index => {
         setSlideIndex(index)
@@ -32,10 +35,11 @@ const Carrusel = ( ) => {
     return (
         <div className="container-slider">
             {dataSlider.map((obj, index) => {
+                
                 return (
                     <div
-                    key={index}
-                    className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
+                        key={obj.id}
+                        className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
                     >
                         <img 
                         src={obj.img} 
@@ -48,9 +52,10 @@ const Carrusel = ( ) => {
 
             <div className="container-dots">
                 {Array.from({length: 5}).map((item, index) => (
-                    <div 
-                    onClick={() => moveDot(index + 1)}
-                    className={slideIndex === index + 1 ? "dot active" : "dot"}
+                    <div
+                        key={index}
+                        onClick={() => moveDot(index + 1)}
+                        className={slideIndex === index + 1 ? "dot active" : "dot"}
                     ></div>
                 ))}
             </div>
