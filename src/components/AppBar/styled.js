@@ -14,6 +14,8 @@ export const Div = styled.nav`
     position: relative;
     -webkit-box-shadow: 0px 2px 13px 0px rgb(0 0 0 / 21%);
     box-shadow: 0px 2px 13px 0px rgb(0 0 0 / 21%);
+    z-index: 999;
+    position: sticky
 `
 
 export const ImageLogo = styled.img`
@@ -114,6 +116,7 @@ export const NavMenu = styled.ul`
         opacity:1;
         transition: all 1s ease;
         background: #101522;
+        z-index: 999;
     }
 `
 
