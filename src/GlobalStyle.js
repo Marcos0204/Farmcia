@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle`
                 list-style: none;
                 padding: 0;
         }
+        h1 {
+                text-align: center;
+                margin-top: 20px
+        }
         
         button {
                 background: transparent;

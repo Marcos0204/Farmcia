@@ -1,15 +1,13 @@
 import React from 'react'
 import CardList from '../../components/cardList/CardList'
 
-const Medicines = () => {
+const Search = () => {
   return (
     <div>
-      <h1 style={{
-        textAling : 'center'
-      }}>Medicines</h1>
+      <h1>Tu Busqueda</h1>
       <CardList />
     </div>
   )
 }
 
-export default Medicines
+export default Search

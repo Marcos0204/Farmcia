@@ -17,6 +17,7 @@ const Carrusel = ( ) => {
             setSlideIndex(1)
         }
     }
+    
 
     const prevSlide = () => {
         if(slideIndex !== 1){
@@ -31,6 +32,10 @@ const Carrusel = ( ) => {
     const moveDot = index => {
         setSlideIndex(index)
     }
+
+    setTimeout(() => {
+        nextSlide()
+    },[12000])
 
     return (
         <div className="container-slider">
@@ -47,14 +52,14 @@ const Carrusel = ( ) => {
                     </div>
                 )
             })}
-            <BtnSlider moveSlide={nextSlide} direction={"next"} />
-            <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
+           {/**  <BtnSlider moveSlide={nextSlide} direction={"next"} />
+            <BtnSlider moveSlide={prevSlide} direction={"prev"}/>*/}
 
             <div className="container-dots">
                 {Array.from({length: 5}).map((item, index) => (
                     <div
                         key={index}
-                        onClick={() => moveDot(index + 1)}
+                        ////onClick={() => moveDot(index + 1)}
                         className={slideIndex === index + 1 ? "dot active" : "dot"}
                     ></div>
                 ))}

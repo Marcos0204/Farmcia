@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaTimes, FaBars } from 'react-icons/fa';
+import { useNavigate }  from 'react-router-dom'
 
 
 
@@ -25,8 +26,15 @@ const AppBar = () => {
 
   const [ click, setClick ] = useState(false);
 
+  const Navigate=  useNavigate()
+
 
   const haledClick = ()=> setClick(!click)
+
+  const handleSearch = () => {
+    console.log('buscando..')
+    Navigate('/buscar')
+  }
   return (
     <>
       <Div>
@@ -41,7 +49,7 @@ const AppBar = () => {
 
           />
           <IconDelete onClick= {() => SetSearch('')} > X</IconDelete>
-          <IconSearch />
+          <IconSearch onClick={handleSearch} />
         </InputSerch>
 
 
