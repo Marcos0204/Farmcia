@@ -5,18 +5,37 @@ import Layout from '../components/Layout/Layout';
 import Beauty from '../pages/beauty/Beauty';
 import  Medicines from '../pages/medicines/Medicines'
 import Search from '../pages/search/Search';
+import PublicRoute from './PublicRoute';
 
 
 const routes = () => {
   return (
-    <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/medicamentos" element={<Medicines />} />
-        <Route path="/belleza" element={<Beauty />} />
-        <Route path="/buscar" element={<Search />} />
-      </Routes>
-    </Layout>
+        
+          <Route path="/" element={
+            <PublicRoute>
+              <Home />
+            </PublicRoute>  
+          } />
+          <Route path="/medicamentos" element={
+            <PublicRoute>
+              <Medicines />
+            </PublicRoute>  
+          } />
+          
+          <Route path="/belleza" element={
+            <PublicRoute>
+               <Beauty />
+            </PublicRoute>  
+          } />
+          <Route path="/buscar" element={
+            <PublicRoute>
+                <Search />        
+            </PublicRoute> 
+          } />
+          
+    </Routes>
+
   )
 }
 
