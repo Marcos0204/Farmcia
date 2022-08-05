@@ -16,7 +16,7 @@ import { Div,
   NavLinks
 
 } from './styled'
-import Logo from '../../img/logo.png'
+import Logo from '../../img/logo.jpg'
 
 
 
@@ -64,7 +64,7 @@ const AppBar = () => {
         <NavMenu click={click}  onClick={haledClick}>
           <NavItem>
             <NavLinks to='/'>
-                Home
+                Inicio
             </NavLinks>
           </NavItem>
           <NavItem>

@@ -5,7 +5,9 @@ import Layout from '../components/Layout/Layout';
 import Beauty from '../pages/beauty/Beauty';
 import  Medicines from '../pages/medicines/Medicines'
 import Search from '../pages/search/Search';
+import Login from '../pages/admin/login/Login';
 import PublicRoute from './PublicRoute';
+
 
 
 const routes = () => {
@@ -31,6 +33,11 @@ const routes = () => {
           <Route path="/buscar" element={
             <PublicRoute>
                 <Search />        
+            </PublicRoute> 
+          } />
+          <Route path="/login" element={
+            <PublicRoute>
+                <Login />        
             </PublicRoute> 
           } />
           
